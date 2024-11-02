@@ -484,6 +484,237 @@ int main()
 #include<stdlib.h>
 int main()
 {
+	int a, b;
+	double c, d;
+	scanf("%d %d",&a,&b);
+	c = (double)a / b;
+	if (b > 0)
+		printf("%d/%d=%.2lf", a, b, c);
+	else if (b==0)
+		printf("%d/%d=Error", a, b);
+	else 
+		printf("%d/(%d)=%.2lf", a, b, c);
+	return 0;
+}
+
+/*/
+
+/*-------------------------------------//出租车计价
+#include<stdio.h>
+#include<math.h>
+#include<stdlib.h>
+int main()
+{
+	int a, b;
+	double c, d;
+	scanf("%lf %d",&c,&a);
+	if (c <= 3)
+		b = round(10 + a / 5 * 2);
+	else if (c <= 10)
+		b = round(10 + (c - 3) * 2 + a / 5 * 2);
+	else
+		b = round(10 + 14+(c - 10) * 3 + a / 5 * 2);
+	printf("%d",b);
+	return 0;
+}
+
+/*/
+
+/*-------------------------------------// 输出英文字母的前驱和后继字母
+#include<stdio.h>                        //用if一定记得用==,换位子
+#include<math.h>
+#include<stdlib.h>
+int main()
+{
+	char a;
+	scanf("%c",&a);
+	if (a =='z')
+	printf("y 121\na 97");
+	else if(a=='a')
+		printf("z 122\nb 98");
+	else if(a=='A')
+		printf("%c %d\n%c %d", a +25, a +25, a + 1, a + 1);
+	else if (a == 'Z')
+		printf("%c %d\n%c %d", a - 1, a - 1, a-25, a-25);
+	else
+	printf("%c %d\n%c %d",a-1,a-1,a+1,a+1);
+	return 0;
+}
+
+/*/
+
+/*-------------------------------------//
+#include<stdio.h>
+#include<math.h>
+#include<stdlib.h>
+int main()
+{
+	int a, b, c, d;
+	scanf("%d",&a);
+	if (a <= 5)
+	{
+		a++;
+		a++;
+	}
+	else
+		a = a + 2 - 7;
+	printf("%d",a);
+	return 0;
+}
+
+/*/
+
+/*-------------------------------------// 判断BMI指数
+#include<stdio.h>
+#include<math.h>
+#include<stdlib.h>
+int main()
+{
+	double a, b, c, d;
+	scanf("%lf %lf",&a,&b);
+	c = b / a / a;
+	if (c < 18.5)
+		printf("BMI = %.1lf\nUnder Weight", c);
+	else if (c < 24)
+		printf("BMI = %.1lf\nNormal", c);
+	else if (c < 28)
+		printf("BMI = %.1lf\nOver Weight", c);
+	else if (c < 32)
+		printf("BMI = %.1lf\nFat", c);
+	else 
+		printf("BMI = %.1lf\nToo Fat", c);;
+	return 0;
+}
+
+/*/
+
+/*-------------------------------------//12-24小时制
+#include<stdio.h>
+#include<math.h>
+#include<stdlib.h>
+int main()
+{
+	int a, b, c, d;
+	scanf("%d:%d",&a,&b);
+	if (a < 12)
+		printf("%01d:%01d AM", a, b);
+	else if (a == 12)
+		printf("%01d:%01d PM", a, b);
+	else
+	{
+		a -= 12;
+		printf("%01d:%01d PM", a, b);
+	}
+	return 0;
+}
+
+/*/
+
+/*-------------------------------------//7-7 计算某年某月某日是该年中的第几天
+#include<stdio.h>
+#include<math.h>
+#include<stdlib.h>
+int main()
+{
+	int A[] = { 0,0,31,28,31,30,31,30,31,31,30,31,30,31 };
+	int B[] = { 0,0,31,29,31,30,31,30,31,31,30,31,30,31 };
+	int a, b, c, d;
+	scanf("%d-%d-%d",&a,&b,&c);
+	if (a % 4 == 0 && a % 100 != 0 || a % 400 == 0)
+		for (d=0; b >= 0; b--)
+		{
+			d += B[b];
+	}
+	else
+		for (d = 0; b >= 0; b--)
+		{
+			d += A[b];
+		}
+	d = d + c;
+	printf("%d",d);
+	return 0;
+}
+
+/*/
+
+/*-------------------------------------//7-8 高速公路超速处罚
+#include<stdio.h>
+#include<math.h>
+#include<stdlib.h>
+int main()
+{
+	double d;
+	int a, b, c;
+	scanf("%d %d",&a,&b);
+	d = (double)(a - b) / b;
+	if (d < 0.1)
+		printf("OK");
+	else if (d >= 0.1 && d < 0.5)
+		printf("Exceed %.0lf%%. Ticket 200", 100 * d);
+	else
+		printf("Exceed %.0lf%%. License Revoked", 100 * d);
+
+	return 0;
+}
+
+/*/
+
+/*-------------------------------------//计算工资
+#include<stdio.h>
+#include<math.h>
+#include<stdlib.h>
+int main()
+{
+	int a, b, c ;
+	scanf("%d %d",&a,&b);
+	if (a < 5)
+	{
+		if (b < 40)
+			c = b * 30;
+		else
+			c = 1200 + 45 * (b - 40);
+			
+	}
+	else
+	{
+		if (b < 40)
+			c = b * 50;
+		else
+			c = 2000 + 75 * (b - 40);
+	}
+
+	printf("%d.00",c);
+	return 0;
+}
+
+/*/
+
+//*-------------------------------------// 能买手机吗？
+#include<stdio.h>                       //整数除法运算结果位小数舍四进五需注意                                       //
+#include<math.h>                        //一个数改为.0形式用round函数,此时应用ceil函数
+#include<stdlib.h>
+int main()
+{
+	int a, b;
+	scanf("%d",&a);
+	b = ceil(((a - 3200) / 40.0));
+	if(a<=3200)
+	printf("不需加班,可购买");
+	else if (a <= 4800)
+	printf("需加班%d小时,可购买", b);
+	else
+		printf("需加班%d小时,买不起", b);
+	return 0;
+}
+
+/*/
+
+/*-------------------------------------//
+#include<stdio.h>
+#include<math.h>
+#include<stdlib.h>
+int main()
+{
 	int a, b, c, d;
 	scanf("%d",&a);
 	printf();
