@@ -1,3 +1,6 @@
+#include <stdio.h>
+#include <stdlib.h>
+
 #define _CRT_SECURE_NO_WARNINGS 1
 /*#include<stdio.h>用“*”输出点阵汉字
 int main()                               //打印内容不能为空，最后一行也不可只打印\n
@@ -492,7 +495,7 @@ int main()
 		printf("%d/%d=%.2lf", a, b, c);
 	else if (b==0)
 		printf("%d/%d=Error", a, b);
-	else 
+	else
 		printf("%d/(%d)=%.2lf", a, b, c);
 	return 0;
 }
@@ -581,7 +584,7 @@ int main()
 		printf("BMI = %.1lf\nOver Weight", c);
 	else if (c < 32)
 		printf("BMI = %.1lf\nFat", c);
-	else 
+	else
 		printf("BMI = %.1lf\nToo Fat", c);;
 	return 0;
 }
@@ -673,7 +676,7 @@ int main()
 			c = b * 30;
 		else
 			c = 1200 + 45 * (b - 40);
-			
+
 	}
 	else
 	{
@@ -733,7 +736,7 @@ int main()
 
 	//*/
 
-	
+
 
 /*-------------------------------------//求交错序列前N项和
 #include<stdio.h>
@@ -774,8 +777,8 @@ int main()
 		else
 			i++;
 	}
-		
-		
+
+
 	return 0;
 }
 
@@ -846,6 +849,7 @@ int main()
 }
 
 //*/
+
 
 
 
