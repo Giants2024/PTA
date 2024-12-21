@@ -1,5 +1,9 @@
 #define _CRT_SECURE_NO_WARNINGS 1
-/*#include<stdio.h>用“*”输出点阵汉字
+#include<stdio.h>
+#include<math.h>
+#include<stdlib.h>
+/**-------------------------------------//用“*”输出点阵汉字
+#include<stdio.h>                          
 int main()                               //打印内容不能为空，最后一行也不可只打印\n
 {
 	printf("\n");
@@ -835,13 +839,24 @@ int main()
 
 //*/
 
-/*-------------------------------------//
-#include<stdio.h>
-#include<math.h>
-#include<stdlib.h>
+//*-------------------------------------//
+
 int main()
 {
-
+	int N;
+	double  up ,down;
+	double ret=0;
+	up = 2.0;
+	down = 1.0;
+	scanf("%d", &N);
+	while (N-- > 0)
+	{
+		ret += 1.0*up / down;
+		up += down;
+		down = up - down;
+	}
+	printf("%.2f", ret);
+    
 	return 0;
 }
 

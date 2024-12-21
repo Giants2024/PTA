@@ -24,7 +24,7 @@ int main()                               //´òÓ¡ÄÚÈÝ²»ÄÜÎª¿Õ£¬×îºóÒ»ÐÐÒ²²»¿ÉÖ»´òÓ
 }
 /*/
 
-/**-------------------------------------//A³ËÒÔB
+/*-------------------------------------//A³ËÒÔB
 #include<stdio.h>
 int main()
 {
@@ -786,64 +786,46 @@ int main()
 
 /*-------------------------------------//¼òÐ´×ªÈ«³Æ
                                        //×¢Òâ%c²»»áÌø¹ý¿Õ°××Ö·û£¬Ç°Ãæ¼Ó¿Õ¸ñ¿ÉÒÔÌø¹ý¿Õ°××Ö·û
-#include<stdio.h>
-#include<math.h>
-#include<stdlib.h>
 int main()
 {
-	char a;
-
-	while (scanf("%c ", &a) != EOF)
+	int up, down,u,d,r;
+	scanf("%d/%d", &up, &down);
+	u = up;
+	d = down;
+	while (d)
 	{
-		if (a == 'c' || a == 'C')
-			printf("BEIJING OLYMPIC GAMES\n");
-		else if (a == 'j' || a == 'J')
-			printf("JAPAN WORLD CUP\n");
-		else if (a == 'K' || a == 'k')
-			printf("KOREA WORLD CUP\n");
-
-		else if (a == EOF)
-			break;
-		else
-			printf("%c\n", a);
+		r = u % d;
+		u = d;
+		d = r;
 	}
+	up =up/ u;
+	down =down/ u;
+	printf("%d/%d", up, down);
 	return 0;
 }
 
 //*/
 
 
-/*-------------------------------------// ×î¼ÑÇéÂÂÉí¸ß²î
-#include<stdio.h>
-#include<math.h>
-#include<stdlib.h>
-#include<string.h>
-int main()
-{
-	int nums;
-	double m, f;
-	char M, F;
-	scanf("%d %c %lf %c %lf", &nums, &M, &m, &F,&f);
-	if (nums == 1)
-	{
-		if (strcmp('M', M) == 0)
-			f = m * 1.09;
-		else
-			f = m / 1.09;
-		printf("%.2f", f);
-	}
-
-	return 0;
-}
 
 //*/
 
 /*-------------------------------------//
-#include<stdio.h>
-#include<math.h>
-#include<stdlib.h>
 int main()
 {
+	int N;
+	long long up ,down;
+	double ret=0;
+	up = 2.0;
+	down = 1.0;
+	scanf("%d", &N);
+	while (N-- > 0)
+	{
+		ret += 1.0*up / down;
+		up += down;
+		down = up - down;
+	}
+	printf("%.2f", ret);
 
 	return 0;
 }
